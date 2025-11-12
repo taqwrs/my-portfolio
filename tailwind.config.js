@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class', // เปิดใช้งาน Dark Mode แบบ class
+  darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -9,13 +9,14 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        // เราจะตั้งค่าฟอนต์ใน layout.js แทน
+        sans: ['var(--font-inter)', 'var(--font-sarabun)', 'sans-serif'],
       },
       animation: {
-        'blob': 'blob 7s infinite', // เพิ่ม animation ของคุณ
+        'blob': 'blob 7s infinite',
+        'bounce': 'bounce 1s infinite',
       },
       keyframes: {
-        'blob': { // เพิ่ม keyframes ของคุณ
+        blob: {
           '0%': {
             transform: 'translate(0px, 0px) scale(1)',
           },

@@ -21,17 +21,25 @@ const sarabun = Sarabun({
 
 export const metadata = {
   title: 'Takwa Sasoleng - Developer & UX/UI Designer',
-  description: 'พอร์ตโฟลิโอของ ตักวา สะสอเล็ง นักพัฒนาซอฟต์แวร์และนักออกแบบ UX/UI',
+  description: 'นักพัฒนาซอฟต์แวร์และนักออกแบบ UX/UI กำลังมองหาตำแหน่งงานแรก',
+  keywords: 'developer, UX/UI designer, portfolio, software engineer, Thailand',
+  authors: [{ name: 'Takwa Sasoleng' }],
+  openGraph: {
+    title: 'Takwa Sasoleng - Developer & UX/UI Designer',
+    description: 'นักพัฒนาซอฟต์แวร์และนักออกแบบ UX/UI กำลังมองหาตำแหน่งงานแรก',
+    type: 'website',
+    locale: 'th_TH',
+  },
 }
 
 export default function RootLayout({ children }) {
   return (
     // suppressHydrationWarning สำคัญมากสำหรับ next-themes
     <html lang="th" className={`${inter.variable} ${sarabun.variable} scroll-smooth`} suppressHydrationWarning>
-      <body className="bg-slate-50 text-slate-800 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-200 font-sans">
+      <body className={`bg-slate-50 text-slate-800 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-200 font-sans ${inter.variable} ${sarabun.variable}`}>
         <ThemeProvider>
           <Navbar />
-          <main className="container mx-auto px-6 py-12 md:py-20">
+          <main>
             {children}
           </main>
           <Footer />

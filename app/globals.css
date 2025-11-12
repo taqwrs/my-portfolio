@@ -1,53 +1,112 @@
+/* app/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ใส่สไตล์ที่คุณ custom ไว้ */
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer base {
+  body {
+    font-family: var(--font-inter), var(--font-sarabun), sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 
-.portfolio-card {
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-.portfolio-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+@layer components {
+  .portfolio-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  .portfolio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 }
 
-/* Custom scrollbar */
+@layer utilities {
+  /* เพิ่ม animation delay utilities แทน */
+  .animation-delay-2000 {
+    animation-delay: 2000ms;
+  }
+  
+  .animation-delay-4000 {
+    animation-delay: 4000ms;
+  }
+}
+
+/* Custom scrollbar และ styles อื่นๆ เหมือนเดิม */
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: #f1f5f9;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #c7d2fe;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #a5b4fc;
 }
 
-/* Dark scrollbar */
+/* Dark mode styles */
 .dark ::-webkit-scrollbar-track {
   background: #0f172a;
 }
+
 .dark ::-webkit-scrollbar-thumb {
   background: #475569;
 }
+
 .dark ::-webkit-scrollbar-thumb:hover {
   background: #5a6b83;
 }
 
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.dark {
+  color-scheme: dark;
 }
 
-/* Animation classes (เราจะสร้าง component มาจัดการแทน) */
+.dark body {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+.dark .bg-white {
+  background-color: #1e293b;
+}
+
+.dark .text-slate-800 {
+  color: #e2e8f0;
+}
+
+.dark .text-slate-600 {
+  color: #94a3b8;
+}
+
+.dark .text-slate-700 {
+  color: #cbd5e1;
+}
+
+.dark .bg-slate-50 {
+  background-color: #334155;
+}
+
+.dark .bg-slate-100 {
+  background-color: #475569;
+}
+
+.dark .border-slate-200 {
+  border-color: #475569;
+}
+
+.dark .shadow-md {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+}
