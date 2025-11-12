@@ -1,7 +1,7 @@
 // app/page.js
 import Image from 'next/image'
 import Link from 'next/link'
-import FadeIn from '@/components/FadeIn'
+import FadeIn from '@/components/animate/FadeIn'
 import {
   Briefcase,
   FileText,
@@ -16,11 +16,11 @@ import {
   Mail,
   Github,
   Linkedin,
-  UploadCloud,
+  UploadCloud, // ไอคอนนี้ไม่ได้ใช้ แต่เก็บไว้เผื่อ
 } from 'lucide-react'
 
 // เราจะสร้าง ContactForm เป็น Client Component แยก
-import ContactForm from '@/components/ContactForm'
+import ContactForm from '@/components/form/ContactForm'
 
 export default function Home() {
   return (
@@ -72,13 +72,11 @@ export default function Home() {
             <div className="flex flex-col md:flex-row items-center gap-10">
               <div className="w-full md:w-1/3 flex justify-center">
                 <div className="relative">
+                  {/* แก้ไข bg-linear-to-r เป็น bg-gradient-to-r */}
                   <div className="w-64 h-64 bg-linear-to-r from-indigo-500 to-purple-600 rounded-full flex items-center justify-center shadow-xl">
                     <div className="w-60 h-60 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center overflow-hidden">
-                      {/* **สำคัญ:** ให้นำรูปโปรไฟล์ของคุณ (เช่น profile.jpg) ไปไว้ในโฟลเดอร์ `public`
-                        แล้วเปลี่ยน 'src' ข้างล่างนี้
-                      */}
                       <Image
-                        src="/globe.svg" // เปลี่ยนเป็น path รูปของคุณ
+                        src="/globe.svg" // รูปที่คุณเปลี่ยน
                         alt="ตักวา สะสอเล็ง"
                         width={240}
                         height={240}
@@ -135,7 +133,6 @@ export default function Home() {
                 <Code2 size={24} className="mr-2 text-indigo-500" />
                 ทักษะการเขียนโปรแกรม
               </h3>
-              {/* ... (โค้ด Skill bars เหมือนเดิม) ... */}
               <div className="space-y-4">
                 <div>
                   <div className="flex justify-between mb-1">
@@ -146,7 +143,6 @@ export default function Home() {
                     <div className="bg-indigo-600 h-2.5 rounded-full" style={{ width: '85%' }}></div>
                   </div>
                 </div>
-                {/* ... (เพิ่ม skill อื่นๆ) ... */}
                 <div>
                   <div className="flex justify-between mb-1">
                     <span className="text-slate-700 dark:text-slate-300">JavaScript</span>
@@ -181,9 +177,7 @@ export default function Home() {
                 <Palette size={24} className="mr-2 text-indigo-500" />
                 การออกแบบและเครื่องมือ
               </h3>
-              {/* ... (โค้ด Tools เหมือนเดิม) ... */}
               <div className="grid grid-cols-2 gap-4">
-                {/* ... (โค้ด Tools เหมือนเดิม) ... */}
                 <div className="flex items-center p-3 bg-slate-100 rounded-lg dark:bg-slate-700">
                   <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-sm mr-3 dark:bg-slate-600">
                     <span className="font-bold text-indigo-600">F</span>
@@ -196,19 +190,20 @@ export default function Home() {
                   </div>
                   <span className="font-medium text-slate-700 dark:text-slate-300">React</span>
                 </div>
-                {/* ... (เพิ่ม tool อื่นๆ) ... */}
+                {/* ... (เพิ่ม tool อื่นๆ ตามโค้ดเดิม) ... */}
               </div>
             </div>
           </div>
         </section>
       </FadeIn>
 
-      {/* ===== Portfolio Section ===== */}
+      {/* ===== Portfolio Section (เติมโปรเจกต์ครบ) ===== */}
       <FadeIn>
         <section id="portfolio" className="py-20 md:py-32">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-center dark:text-white">ผลงานของฉัน</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-            {/* ... (โค้ด Card เหมือนเดิม แต่ใช้ Next/Image) ... */}
+
+            {/* --- Project 1: ThermalComfort --- */}
             <div className="bg-white rounded-xl overflow-hidden shadow-md portfolio-card dark:bg-slate-800">
               <Link href="https://github.com/taqwrs/ThermalComfortPJ" target="_blank" title="คลิกเพื่อดูบน GitHub">
                 <div className="relative overflow-hidden">
@@ -220,13 +215,89 @@ export default function Home() {
                     className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105"
                     unoptimized
                   />
-                  {/* ... (โค้ดที่เหลือ) ... */}
+                  <div className="absolute top-4 right-4 bg-indigo-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    Web App
+                  </div>
                 </div>
-                {/* ... (โค้ดที่เหลือ) ... */}
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-slate-800 mb-2 dark:text-white">Thermal Comfort Model</h3>
+                  <p className="text-slate-600 mb-4 text-sm dark:text-slate-300">
+                    เว็บโมเดลทำนายสภาวะความน่าสบายของผู้ป่วยภาวะภูมิไวเกิน
+                    พัฒนาด้วย Python และ Machine Learning
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full dark:bg-indigo-900/30 dark:text-indigo-400">Python</span>
+                    <span className="text-xs bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full dark:bg-indigo-900/30 dark:text-indigo-400">Machine Learning</span>
+                    <span className="text-xs bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full dark:bg-indigo-900/30 dark:text-indigo-400">Web App</span>
+                  </div>
+                </div>
               </Link>
             </div>
-            {/* ... (เพิ่ม Card อื่นๆ) ... */}
+
+            {/* --- Project 2: MedEquip --- */}
+            <div className="bg-white rounded-xl overflow-hidden shadow-md portfolio-card dark:bg-slate-800">
+              <Link href="https://github.com/taqwrs/MedEquipPG" target="_blank" title="คลิกเพื่อดูบน GitHub">
+                <div className="relative overflow-hidden">
+                  <Image
+                    src="https://placehold.co/600x400/A7F3D0/059669?text=MedEquip+System"
+                    alt="MedEquip System"
+                    width={600}
+                    height={400}
+                    className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105"
+                    unoptimized
+                  />
+                  <div className="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    Internship
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-slate-800 mb-2 dark:text-white">MedEquip System</h3>
+                  <p className="text-slate-600 mb-4 text-sm dark:text-slate-300">
+                    ระบบจัดการอุปกรณ์การแพทย์ พัฒนาระหว่างฝึกสหกิจศึกษา
+                    ทั้งส่วน Frontend (PG) และ Backend (API)
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full dark:bg-green-900/30 dark:text-green-400">Full Stack</span>
+                    <span className="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full dark:bg-green-900/30 dark:text-green-400">API</span>
+                    <span className="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full dark:bg-green-900/30 dark:text-green-400">Database</span>
+                  </div>
+                </div>
+              </Link>
+            </div>
+
+            {/* --- Project 3: Productivity --- */}
+            <div className="bg-white rounded-xl overflow-hidden shadow-md portfolio-card dark:bg-slate-800">
+              <Link href="https://github.com/taqwrs/ProductivityPG" target="_blank" title="คลิกเพื่อดูบน GitHub">
+                <div className="relative overflow-hidden">
+                  <Image
+                    src="https://placehold.co/600x400/FBCFE8/DB2777?text=Productivity+App"
+                    alt="Productivity Application"
+                    width={600}
+                    height={400}
+                    className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105"
+                    unoptimized
+                  />
+                  <div className="absolute top-4 right-4 bg-pink-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    Mini Project
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-slate-800 mb-2 dark:text-white">Productivity Application</h3>
+                  <p className="text-slate-600 mb-4 text-sm dark:text-slate-300">
+                    แอปพลิเคชันเพิ่มประสิทธิภาพการทำงาน พัฒนาระหว่างฝึกสหกิจศึกษา
+                    ทั้งส่วน Frontend และ Backend API
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-pink-100 text-pink-700 px-3 py-1 rounded-full dark:bg-pink-900/30 dark:text-pink-400">Web App</span>
+                    <span className="text-xs bg-pink-100 text-pink-700 px-3 py-1 rounded-full dark:bg-pink-900/30 dark:text-pink-400">API</span>
+                    <span className="text-xs bg-pink-100 text-pink-700 px-3 py-1 rounded-full dark:bg-pink-900/30 dark:text-pink-400">UX/UI Design</span>
+                  </div>
+                </div>
+              </Link>
+            </div>
+
           </div>
+          
           <div className="text-center mt-12">
             <Link href="https://github.com/taqwrs" target="_blank" className="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium dark:text-indigo-400 dark:hover:text-indigo-300">
               ดูโปรเจคทั้งหมดบน GitHub
@@ -242,7 +313,6 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-center dark:text-white">เรซูเม่ของฉัน</h2>
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-              {/* ... (โค้ด Education & Experience เหมือนเดิม) ... */}
               <div>
                 <h3 className="text-xl font-bold text-slate-800 mb-6 dark:text-white flex items-center">
                   <GraduationCap size={24} className="mr-2 text-indigo-500" />
@@ -278,10 +348,6 @@ export default function Home() {
                 <p className="text-slate-600 mb-6 dark:text-slate-300">
                   คุณสามารถดาวน์โหลดเรซูเม่ของฉันในรูปแบบ PDF ได้ที่นี่
                 </p>
-
-                {/* **สำคัญ:** ให้นำไฟล์เรซูเม่ของคุณ (เช่น resume_takwa.pdf)
-                  ไปวางไว้ในโฟลเดอร์ `public` ที่ root project ของคุณ
-                */}
                 <Link
                   href="/resume_takwa.pdf" // Path ไปยังไฟล์ในโฟลเดอร์ public
                   download="resume_takwa.pdf" // บังคับให้ดาวน์โหลด
@@ -308,7 +374,6 @@ export default function Home() {
               <br />ติดต่อฉันได้เลย!
             </p>
 
-            {/* เราจะย้าย Form ไปที่ Client Component */}
             <ContactForm />
 
           </div>

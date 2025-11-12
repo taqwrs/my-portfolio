@@ -4,7 +4,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Sparkles, Menu, X } from 'lucide-react'
-import { ThemeToggle } from './ThemeToggle'
+import { ThemeToggle } from '../theme/ThemeToggle'
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
