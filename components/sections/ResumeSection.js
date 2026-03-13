@@ -15,9 +15,9 @@ export default function ResumeSection() {
             </h3>
             <div className="space-y-6">
               <div className="border-l-2 border-indigo-500 pl-4">
-                <h4 className="font-bold text-slate-800 dark:text-white">ปริญญาตรี วิทยาการคอมพิวเตอร์</h4>
-                <p className="text-slate-600 dark:text-slate-300">มหาวิทยาลัย...</p>
-                <p className="text-sm text-slate-500 dark:text-slate-400">คาดว่าจะจบการศึกษา: 14 พฤศจิกายน 2568</p>
+                <h4 className="font-bold text-slate-800 dark:text-white">ปริญญาตรี:วิทยาศาสตร์บัณฑิต(เทคโนโลยีดิจิทัลทางการแพทย์) </h4>
+                <p className="text-slate-600 dark:text-slate-300">มหาวิทยาลัยวลัยลักษณ์</p>
+                <p className="text-sm text-slate-500 dark:text-slate-400">จบการศึกษา: 22 ธันวาคม 2568</p>
               </div>
             </div>
           </div>
@@ -29,8 +29,8 @@ export default function ResumeSection() {
             <div className="space-y-6">
               <div className="border-l-2 border-indigo-500 pl-4">
                 <h4 className="font-bold text-slate-800 dark:text-white">ฝึกสหกิจศึกษา - Developer</h4>
-                <p className="text-slate-600 dark:text-slate-300">บริษัท...</p>
-                <p className="text-sm text-slate-500 dark:text-slate-400">พัฒนาระบบ MedEquip และ Productivity Application</p>
+                <p className="text-slate-600 dark:text-slate-300">โรงพยาบาลทักษิณ</p>
+                <p className="text-sm text-slate-500 dark:text-slate-400">พัฒนาระบบ MedEquip App และ Productivity App</p>
               </div>
             </div>
           </div>

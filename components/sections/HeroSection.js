@@ -20,7 +20,7 @@ export default function HeroSection() {
         <span className="font-semibold text-indigo-500"> กำลังมองหาตำแหน่งงานแรก</span>
       </p>
       <p className="text-lg text-slate-500 max-w-2xl mx-auto mb-8 dark:text-slate-400">
-        จบการศึกษาปริญญาตรี 14 พฤศจิกายน 2568<br />
+        จบการศึกษาปริญญาตรี 22 ธันวาคม 2568<br />
         มีประสบการณ์จากการฝึกสหกิจศึกษาและโปรเจคส่วนตัว
       </p>
       <div className="flex flex-col sm:flex-row gap-4">

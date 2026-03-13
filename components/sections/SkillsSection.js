@@ -43,9 +43,9 @@ export default function SkillsSection() {
               { name: 'Figma', bgColor: 'bg-white', textColor: 'text-indigo-600', letter: 'F' },
               { name: 'React', bgColor: 'bg-[#61DAFB]', textColor: 'text-white', letter: 'R' },
               { name: 'Node.js', bgColor: 'bg-[#339933]', textColor: 'text-white', letter: 'N' },
-              { name: 'MongoDB', bgColor: 'bg-[#4479A1]', textColor: 'text-white', letter: 'M' },
+              { name: 'MySQL', bgColor: 'bg-[#4479A1]', textColor: 'text-white', letter: 'M' },
               { name: 'Git', bgColor: 'bg-[#F05032]', textColor: 'text-white', letter: 'G' },
-              { name: 'Miro', bgColor: 'bg-[#FFD02F]', textColor: 'text-white', letter: 'M' }
+              { name: 'Postman', bgColor: 'bg-[#FFD02F]', textColor: 'text-white', letter: 'P' }
             ].map((tool, index) => (
               <div key={index} className="flex items-center p-3 bg-slate-100 rounded-lg dark:bg-slate-700">
                 <div className={`w-10 h-10 ${tool.bgColor} rounded-lg flex items-center justify-center shadow-sm mr-3 dark:bg-slate-600`}>

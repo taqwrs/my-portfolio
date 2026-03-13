@@ -43,7 +43,7 @@ export default function AboutSection() {
             <div className="flex flex-wrap gap-4 mt-8">
               <div className="flex items-center">
                 <GraduationCap size={20} className="text-indigo-500 mr-2" />
-                <span className="font-medium">กำลังจะจบปริญญาตรี</span>
+                <span className="font-medium">จบการศึกษาระดับปริญญาตรี</span>
               </div>
               <div className="flex items-center">
                 <Briefcase size={20} className="text-indigo-500 mr-2" />
