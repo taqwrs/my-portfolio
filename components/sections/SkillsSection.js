@@ -14,9 +14,9 @@ export default function SkillsSection() {
           <div className="space-y-4">
             {[
               { name: 'Python', level: 85 },
-              { name: 'JavaScript', level: 80 },
+              { name: 'JavaScript', level: 85 },
               { name: 'HTML/CSS', level: 90 },
-              { name: 'SQL/Database', level: 75 }
+              { name: 'SQL/Database', level: 90 }
             ].map((skill, index) => (
               <div key={index}>
                 <div className="flex justify-between mb-1">
