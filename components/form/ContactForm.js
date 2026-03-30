@@ -50,7 +50,7 @@ export default function ContactForm() {
               <Github size={24} />
             </Link>
             {/* แนะนำให้เพิ่ม LinkedIn จริง */}
-            <Link href="https://linkedin.com/in/yourprofile" target="_blank" className="text-slate-500 hover:text-indigo-600 transition-colors dark:text-slate-400 dark:hover:text-indigo-400" title="LinkedIn">
+            <Link href="https://www.linkedin.com/in/takwa-sasoleng-546a83312/" target="_blank" className="text-slate-500 hover:text-indigo-600 transition-colors dark:text-slate-400 dark:hover:text-indigo-400" title="LinkedIn">
               <Linkedin size={24} />
             </Link>
           </div>
