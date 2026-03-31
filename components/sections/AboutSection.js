@@ -29,7 +29,7 @@ export default function AboutSection() {
           </div>
           <div className="w-full md:w-2/3">
             <p className="text-lg text-slate-600 mb-6 leading-relaxed dark:text-slate-300">
-              ฉันเป็นนักศึกษาปริญญาตรีสาขาวิทยาการคอมพิวเตอร์ ที่กำลังจะสำเร็จการศึกษาในเดือนพฤศจิกายน 2568
+              จบปริญญาตรีสาขาวิชานวัตกรรมสารสนเทศทางการแพทย์ มหาวิทยาลัยวลัยลักษณ์
               ฉันมีความสนใจในการพัฒนาซอฟต์แวร์และการออกแบบ UX/UI
             </p>
             <p className="text-lg text-slate-600 mb-6 leading-relaxed dark:text-slate-300">
